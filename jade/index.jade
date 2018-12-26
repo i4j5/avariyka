@@ -1,0 +1,122 @@
+include ../node_modules/bemto.jade/bemto
+//
+  <?php
+
+  $utm_medium = '-';
+  $utm_source = '-';
+  $utm_campaign = '-';
+  $utm_term = '-';
+  $utm_content = '-';
+
+  if (isset($_GET['utm_medium'])) {
+    $utm_medium = $_GET['utm_medium'];
+  }
+
+  if (isset($_GET['utm_source'])) {
+    $utm_source = $_GET['utm_source'];
+  }
+
+  if (isset($_GET['utm_campaign'])) {
+    $utm_campaign = $_GET['utm_campaign'];
+  }
+
+  if (isset($_GET['utm_term'])) {
+    $utm_term = $_GET['utm_term'];
+  }
+
+  if (isset($_GET['utm_content'])) {
+    $utm_content = $_GET['utm_content'];
+  }
+  $url = $_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
+  $utm =  $_SERVER["QUERY_STRING"];
+  ?>
+
+<!DOCTYPE html>
+html(lang="ru")
+head
+  meta(charset="UTF-8")
+  meta(name="viewport" content="width=device-width, initial-scale=1")
+  title 
+
+  link(rel="icon" href="img/favicon.ico" type="image/x-icon")
+  link(rel="shortcut icon" href="img/favicon.ico" type="image/x-icon")
+  link(rel='apple-touch-icon', sizes='180x180', href='img/apple-touch-icon.png')
+  link(rel='icon', type='image/png', sizes='32x32', href='img/favicon-32x32.png')
+  link(rel='icon', type='image/png', sizes='16x16', href='img/favicon-16x16.png')
+  //- link(rel='manifest', href='img/site.webmanifest')
+  link(rel='mask-icon', href='img/safari-pinned-tab.svg', color='#5bbad5')
+  meta(name='msapplication-TileColor', content='#da532c')
+  meta(name='theme-color', content='#ffffff')
+
+
+  link(href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic-ext" rel="stylesheet")
+  //build:css css/all.css
+  link(rel="stylesheet", href="node_modules/animate.css/animate.min.css")
+  link(rel="stylesheet", href="tmp/index.css")
+  //endbuild
+body.page
+  .loader.loader_active
+    .loader__spinner
+    .loader__text Загрузка
+  .loader.loader_submit
+    .loader__spinner
+    .loader__text Обработка...
+  .top
+    .container
+      .top.top__left
+        +b.logo
+          +e.img
+            img(src='img/logo.png')
+          +e.text Ростове-на-Дону,<br>ул. Текучева, 23, эт. 3
+      .top__right
+        +b.phone-grup 
+          +e.phone 8 (863) 303-38-33
+          +e.text с 9:00 до 19:00 без выходных
+  .header
+    .container
+      .offer 
+        .offer__text.start-animate
+          |Экстренная замена
+          br 
+          span канализационных 
+          br
+          span и водопроводных 
+          | труб
+          br
+          | в Ростове-на-Дону
+        .offer__text2 Работаем в праздники и выходные дни!
+        .offer__action.order.start-animate(style="animation-delay: .2s") Вызвать специалиста
+
+  .modal#modal__order
+    .modal__wrapper
+        .modal__dialog
+            .close.modal__close
+            .modal__title Заполните форму и представитель компании свяжется с вами
+            +b.form
+              form.ajax
+                input(placeholder='Имя' name='name').input.input_type_name
+                input(placeholder='Телефон' name='phone').input.input_type_phone
+                //- input(placeholder='Введите Ваш E-mail' name='email').input.input_type_email
+                input(type='hidden', name='url', value="<?echo $url?>")
+                input(type='hidden', name='utm', value="<?echo $utm?>")
+                input(type='hidden', name='utm_term', value="<?echo $utm_term?>")
+                input(type='hidden', name='utm_campaign', value="<?echo $utm_campaign?>")
+                input(type='hidden', name='utm_source', value="<?echo $utm_source?>")
+                input(type='hidden', name='utm_medium', value="<?echo $utm_medium?>")
+                input(type='hidden', name='utm_content', value="<?echo $utm_content?>")
+                input(type='hidden', name='order', value='Баланс водопотребления и водоотведения. Консультация')
+                input(type='submit' value='Отправить').form__btn
+
+  .modal#modal__ok
+    .modal__wrapper
+        .modal__dialog
+            .close.modal__close
+            .modal__title <b>Ваша заявка принята</b> <br>Наш специалист свяжется с вами в ближайшее время
+
+
+  script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript")
+  //build:js js/all.js
+  script(src="node_modules/jquery/dist/jquery.min.js")
+  script(src="node_modules/jquery-validation/dist/jquery.validate.min.js")
+  script(src="tmp/index.js")
+  //endbuild

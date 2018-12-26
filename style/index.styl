@@ -1,0 +1,481 @@
+ @import "utilities/reset.styl"
+ @import "mixins/flex-grid.styl"
+ 
+
+.page
+    font-family 'Open Sans', sans-serif
+    background #fff
+    font-weight normal
+    font-style normal
+    overflow-x hidden
+.loader
+    position fixed
+    width 100%
+    height 100%
+    background-color #fff
+    left 0
+    top 0
+    z-index 99999
+    display none
+    &_submit
+        background rgba(0,0,0,.78)
+        .loader__text
+            color #fff
+    &_active
+        display block
+    &__text
+        font-size 14px
+        line-height 1em
+        position absolute
+        left 50%
+        width 100px 
+        text-align center
+        margin-left -50px
+        bottom 20px
+        color #828282
+    &__spinner 
+        background url('../img/logo.png')
+        background-repeat no-repeat
+        background-size 80px
+        width 120px
+        height 120px
+        background-position center
+        background-size 90px
+        background-color #fff
+        border-radius 100%
+        position absolute
+        top 50%
+        left 50%
+        margin-top -60px
+        margin-left -60px
+        animation sk-scaleout 2.0s infinite ease-in-out
+        
+@keyframes sk-scaleout
+    0%
+        transform scale(0)
+        
+    100%
+        transform scale(1.0)
+        opacity 0
+
+.container
+    padding 0 10px
+    @media (min-width 1200px)
+        padding 0
+    max-width 1200px
+    margin auto
+    width 100%
+    display flex
+    flex-wrap wrap
+    
+.top
+    z-index 200
+    background-color rgba(255, 255, 255, 0.96)
+    width 100%
+    height 100px
+    position absolute
+    top 0
+    left 0
+    &__left
+    &__right
+        position relative
+        width 100%
+        min-height 1px
+        // padding-left  10px
+        // padding-right 10px
+        flex 0 0 (100% * 2)
+        max-width 50%
+        width auto
+    &__left
+        @media (max-width 630px)
+            width 90px
+
+.logo
+    margin-top 12px
+    &__img
+        // padding-top 5px
+        display inline-block
+        float left
+        & img
+            width 80px
+        // @media (min-width 500px)
+        //     & img
+        //         width auto
+    &__text
+        font-weight 400
+        font-size 16px
+        color #000
+        line-height 1.5
+        text-align left
+        padding 13px 0 0 40px
+        display none
+        @media (min-width 630px)
+            display inline-block
+  
+.phone-grup
+    text-align right
+    line-height 1
+    margin-top 20px
+    display inline-block
+    //@media (min-width 790px)
+        //float left
+    float right
+    font-weight 300
+    &__phone
+        font-size 18px
+        @media (min-width 460px)
+            font-size 24px
+        color #000
+        font-weight 600
+    &__text
+        font-weight 400
+        margin-top 10px
+        font-size 10px
+        @media (min-width 460px)
+            font-size 14px
+        line-height 1.4em
+.header
+    width 100%
+    background #63b1ff url('../img/header-bg.jpg') no-repeat center
+    background-size  cover
+    height 100vh
+    min-height 650px
+    display flex
+    justify-content center    
+    flex-direction column
+    padding-top 110px
+    position relative
+    &:after
+        content " "
+        position fixed
+        display block
+        border-radius 100%
+        background #fff
+        z-index 100
+        background #fff url('../img/header-bg2.jpg') no-repeat center right
+        background-size  cover
+        border 5px solid #35b2fd
+    &:before
+        display block
+        content " "
+        position absolute
+        background #fff
+        z-index 110
+        background none
+        @media (min-width 670px)
+            background url('../img/header-bg.png') no-repeat center bottom
+        background-size 0
+        @media (min-height 200px)
+            background-size  120px
+        @media (min-height 300px)
+            background-size  150px
+        @media (min-height 400px)
+            background-size  180px
+        @media (min-height 500px)
+            background-size  210px
+        @media (min-height 600px)
+            background-size  240px
+        @media (min-height 700px)
+            background-size  270px
+        @media (min-height 800px)
+            background-size  300px
+        @media (min-height 900px)
+            background-size  330px
+        @media (min-height 1000px)
+            background-size  400px
+        width 470px
+        height 1000px
+        bottom 0px
+        
+        right 10px
+        @media (min-width 900px)
+            right 50px
+        @media (min-width 1300px)
+            right 20%
+        // @media (min-width 1000px)
+        //     right 50px
+    &_w // h < w
+        &:after
+            width 150vw
+            height 150vw
+            top -70%
+            left -80%
+            min-height 750px
+            min-width 750px
+    &_h // w < h
+        &:after
+            width 150vh
+            height 150vh
+            top -50%
+            left -90%
+.offer
+    text-align left !important
+    position relative
+    z-index 150
+    &__text
+        // &:after
+        //     content " "
+        //     position absolute
+        //     width 40%
+        //     height 5px
+        //     background #fff
+        //     margin-top 27px
+        //     @media (min-width 1000px)
+        //         display block
+        //     display none
+        //     margin-top 25px
+        //     box-shadow 0px 0px 5px rgba(7, 7, 7, 0.7)
+        // @media (min-width 640px)
+        //     font-size 30px
+        // @media (min-width 1000px)
+        //     //margin-bottom 100px
+        //     font-size 34px
+            
+        font-size 24px
+        @media (min-width 420px)
+            font-size 30px
+        @media (min-width 810px)
+            font-size 36px
+        margin-bottom 30px
+        font-weight 500
+        color #000
+        line-height 1.5em
+        font-weight 600
+        //-shadow 0px 0px 10px rgba(7, 7, 7, 0.7)
+        text-transform uppercase
+        //width 100%
+        span
+            color #2da1e6
+    &__text2
+        font-size 14px
+        @media (min-width 380px)
+            font-size 18px
+        // @media (min-width 750px)
+        //     font-size 20px
+        @media (min-width 810px)
+            font-size 22px
+        line-height 1.3em
+        position relative
+        text-transform none
+        margin-top 30px
+        margin-bottom 70px
+        &:before
+            content " "
+            width 100px
+            height 1px
+            background #7b7b7b
+            display block
+            margin-bottom 30px
+    &__action
+        &:before
+            @media (min-width 1000px)
+                display block
+            display none
+            content " " 
+            position absolute
+            right -150px
+            bottom 22px
+            background url('../img/main-arrow.png') no-repeat
+            width 115px
+            height 81px
+        // @media (min-width 1000px)
+        //     font-size 16px
+        font-size 18px
+        line-height 1.2em
+        padding 20px 35px
+        border-radius 4px
+        //border 2px solid #fff
+        color #1d171a
+        display inline-block
+        text-align center
+        background-color #fec31b
+        cursor pointer
+        transition all .1s linear
+        //box-shadow  0px 2px 18px 0px rgba(171, 7, 46, 0.42)
+        position relative
+        user-select none
+        text-transform uppercase
+        font-weight 600
+        // @media (min-width 640px)
+        //     font-size 16
+        
+    
+// .btn
+//     user-select none
+//     height 50px
+//     font-size 16px
+//     color #1d171a
+//     background-color #fec31b
+//     border-radius 4
+//     text-align center
+//     line-height 50px
+//     display inline-block
+//     position relative
+//     top 0
+//     cursor pointer
+//     transition all .1s linear
+//     padding 0 25px
+//     margin auto
+//     display table
+//     // &:active
+//     //     top 3px
+//     //     box-shadow 0px 0px 0px 0px #950b0b
+//     // &_style_blue
+//     //     background #4273d6 linear-gradient(0deg, #4273d6, #477de9)
+//     //     box-shadow 0px 3px 0px 0px #174497
+//     // &_style_small
+//     //     font-size 12px !important
+//     //     line-height 28px
+//     //     height 28px
+//     //     border-radius 4px
+//     //     padding 0 15px
+//     //     margin-bottom 10px
+//     //     float left
+
+
+.input
+    font-size 16px
+    color #545454
+    //border-radius 4px 
+    border 1px solid #bcb8b8
+    height 45px
+    outline 0
+    padding 0 40px 0 20px
+    width 100%
+    background-color #fff
+    background-repeat no-repeat
+    background-position right 10px center  
+    &::placeholder
+        color #616161
+    &_type_name
+        background-image url('../img/input_type_name.png')
+    &_type_phone
+        background-image url('../img/input_type_phone.png')
+    &_type_email
+        background-image url('../img/input_type_email.png')
+    
+    &_error
+        border-color #fc4e4e
+        &::placeholder
+            color #ff5959
+    
+    &_ok
+        border-color #5a9c38
+        color #57ad21
+.form
+    &__btn
+        cursor pointer
+        transition all .1s linear
+        border-radius 4px
+        //border 2px solid #fff
+        display inline-block
+        text-align center
+        color #1d171a
+        background-color #fec31b
+        cursor pointer
+        transition all .1s linear
+        //box-shadow  0px 2px 18px 0px rgba(171, 7, 46, 0.42)
+        position relative
+        user-select none
+        text-transform uppercase
+        font-size 18px
+        line-height 1.2em
+        padding 20px 35px
+        font-weight 600
+
+.close
+    background url('../img/close.png') no-repeat center
+    width 25px
+    height 25px
+                
+.modal
+    position fixed
+    left 0
+    top 0
+    height 100%
+    width 100%
+    // opacity 0
+    visibility hidden
+    z-index 500
+    transition visibility 0ms 300ms
+    &__wrapper
+        display flex
+        overflow auto
+        //white-space nowrap
+        position absolute
+        left 0
+        top 0
+        height 100%
+        width 100%
+        z-index 1000
+        transition opacity 300ms 0ms, visibility 0ms 300ms
+        opacity 0
+        visibility hidden
+        background-color rgba(255, 255, 255, 0.85)
+        
+    &::after
+        display inline-block
+        vertical-align middle
+        width 0
+        height 100%
+        content ''
+
+    &_visible
+        // opacity 1
+        visibility visible
+
+    &__dialog
+        display inline-table
+        vertical-align middle
+        z-index 100
+        margin auto
+        transition transform 300ms 0ms
+        transform translateY(-10px)
+        width 90%
+        max-width 400px
+        min-width 300px
+        position relative
+        background #fff
+        height auto
+        border-radius 4px
+        border 5px solid #35b2fd
+        //box-shadow 0px 2px 30px 0px rgba(207, 207, 207, 0.6)
+        @media (min-width 450px)
+            padding 70px 60px
+        padding 70px 40px
+        & 
+            .input
+                margin-bottom 15px
+            img
+                max-width 100%
+            .form__btn
+                width 100%
+                margin-top 15px
+                        
+    &__title
+        font-size 18px
+        line-height 1.7em
+        text-align center
+        color #010101
+        margin-bottom 30px
+        margin-top 10px
+
+    &__close
+        cursor pointer
+        position absolute
+        right 15px
+        top 15px
+        display inline-block
+        z-index 1050 
+        
+    &.modal_visible
+        .modal__wrapper
+            transition opacity 300ms 0ms, visibility 0ms 0ms
+            opacity 1
+            visibility visible
+        .modal__dialog
+            transition transform 300ms 0ms
+            transform translateY(0)
+
+.modal-open
+    overflow hidden
