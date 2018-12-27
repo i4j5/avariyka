@@ -77,7 +77,7 @@ $(document).ready(()=>{
 	        .done(function() {
 	           $('.modal').closeModal()
        			$('#modal__ok').openModal()
-	           yaCounter51637940.reachGoal('order')
+	           yaCounter51705002.reachGoal('order')
 	        })
 	        .always(function() {
 			   //btn.val(btnText)
