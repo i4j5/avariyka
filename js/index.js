@@ -109,6 +109,8 @@ $(window).on('load', e => {
 		$('.offer__text').addClass('animated fadeInDown finish-animate')
 		$('.offer__text2').addClass('animated fadeInDown finish-animate')
 		$('.offer__action').addClass('animated fadeIn finish-animate')
+		$('.header__sign').addClass('animated bounceIn finish-animate')
+
 	}, 100);   
 })
 

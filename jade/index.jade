@@ -73,6 +73,7 @@ body.page
           +e.phone 8 (863) 303-38-33
           +e.text с 9:00 до 19:00 без выходных
   .header
+    img(src='img/sign.png' style="animation-delay: .4s").header__sign.start-animate
     .container
       .offer 
         .offer__text.start-animate
@@ -84,8 +85,57 @@ body.page
           | труб
           br
           | в Ростове-на-Дону
-        .offer__text2 Работаем в праздники и выходные дни!
+        .offer__text2 Работаем в праздники и выходные дни!<br> Устраняем аварии в течение 24 часов<br> Бесплатный выезд инженера
         .offer__action.order.start-animate(style="animation-delay: .2s") Вызвать специалиста
+
+  //- +b.trigers
+  //-   .container
+  //-     +e.title Почему стоит обратиться в БК Инвент?
+  //-     +e.item Мы работаем КРУГЛОСУТОЧНО БЕЗ ВЫХОДНЫХ
+  //-     +e.item Выполняем работы в любое время года
+  //-     +e.item Устраняем аварии в течение 24 часов
+
+
+  +b.scheme
+    +e.container
+      +b.form
+        .scheme__form-title Заполните форму и представитель компании свяжется с вами
+        form.ajax
+          input(placeholder='Имя' name='name').input.input_type_name
+          input(placeholder='Телефон' name='phone').input.input_type_phone
+          input(placeholder='E-mail' name='email').input.input_type_email
+          input(type='hidden', name='url', value="<?echo $url?>")
+          input(type='hidden', name='utm', value="<?echo $utm?>")
+          input(type='hidden', name='utm_term', value="<?echo $utm_term?>")
+          input(type='hidden', name='utm_campaign', value="<?echo $utm_campaign?>")
+          input(type='hidden', name='utm_source', value="<?echo $utm_source?>")
+          input(type='hidden', name='utm_medium', value="<?echo $utm_medium?>")
+          input(type='hidden', name='utm_content', value="<?echo $utm_content?>")
+          input(type='hidden', name='order', value='Аварийка. Замена труб')
+          input(type='submit' value='Отправить').form__btn
+      +e.box
+        +e.title Работать с нами<br>очень просто
+        +e.items
+          +e.item
+            +e.n 1 
+            |Заполните форму или позвоните
+          +e.item 
+            +e.n 2 
+            |Инженер выезжает на объект в течение 2 часов
+          +e.item 
+            +e.n 3
+            |Заключаем договор
+          +e.item 
+            +e.n 4 
+            |Бригада выезжает в течение 12 часов
+          +e.item 
+            +e.n 5 
+            |Выполняем работы по устранению аварии
+          +e.item 
+            +e.n 6 
+            |Сдаем готовую работу!
+        +e.text Всего 6 шага, и вы пользуетесь новыми трубами!
+
 
   .modal#modal__order
     .modal__wrapper
