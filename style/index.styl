@@ -139,7 +139,7 @@
     background #63b1ff url('../img/header-bg.jpg') no-repeat center
     background-size  cover
     height 100vh
-    min-height 650px
+    min-height 870px
     display flex
     justify-content center    
     flex-direction column
@@ -151,7 +151,7 @@
             display none
         position absolute
         top 0
-        left 50%
+        left 60%
         top 50%
         margin-left -210px
         margin-top -204px
@@ -167,7 +167,7 @@
         background-size  cover
         border 5px solid #35b2fd
     &:before
-        display block
+        display none
         content " "
         position absolute
         background #fff
@@ -199,10 +199,11 @@
         bottom 0px
         
         right 10px
-        @media (min-width 900px)
-            right 50px
+        @media (min-width 1000px)
+            right 5px
+            display block
         @media (min-width 1300px)
-            right 20%
+            right 10%
         // @media (min-width 1000px)
         //     right 50px
     &_w // h < w
@@ -571,6 +572,7 @@
     &__box
         display inline-block
         float right
+        max-width 500px
         
     &__text
         font-size 21px
@@ -578,3 +580,10 @@
         margin-bottom 20px
 
         
+
+.price
+    font-size .8em
+    max-width 400px
+    @media (min-width 900px)
+        float left
+        padding 0 15px

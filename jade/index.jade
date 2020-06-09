@@ -67,25 +67,30 @@ body.page
         +b.logo
           +e.img
             img(src='img/logo.png')
-          +e.text Ростове-на-Дону,<br>ул. Текучева, 23, эт. 3
+          +e.text Ростове-на-Дону,<br>ул. Береговая, 27а
       .top__right
         +b.phone-grup 
-          +e.phone 8 (863) 303-38-33
-          +e.text с 9:00 до 19:00 без выходных
+          +e.phone +7 (961) 427-05-75
+          +e.text КРУГЛОСУТОЧНО, ЕЖЕДНЕВНО
   .header
     img(src='img/sign.png' style="animation-delay: .4s").header__sign.start-animate
     .container
       .offer 
         .offer__text.start-animate
-          |Экстренная замена
+          |ЭКСТРЕННОЕ УСТРАНЕНИЕ
           br 
-          span канализационных 
+          span(style="color: #e62d57;") АВАРИЙНЫХ СИТУАЦИЙ 
           br
-          span и водопроводных 
-          | труб
+          span ВОДОПРОВОДА И КАНАЛИЗАЦИИ
           br
-          | в Ростове-на-Дону
-        .offer__text2 Работаем в праздники и выходные дни!<br> Устраняем аварии в течение 24 часов<br> Бесплатный выезд инженера
+          | В РОСТОВЕ-НА-ДОНУ
+        .offer__text2 
+          |Работаем круглосуточно и ежедневно!
+          br
+          |Устраняем аварии в течение 12 часов
+          br
+          |Выезд на объект в течение 30 минут
+
         .offer__action.order.start-animate(style="animation-delay: .2s") Вызвать специалиста
 
   //- +b.trigers
@@ -99,11 +104,11 @@ body.page
   +b.scheme
     +e.container
       +b.form
-        .scheme__form-title Заполните форму и представитель компании свяжется с вами
+        .scheme__form-title Заполните форму и специалист выедет к вам в течение 30 минут!
         form.ajax
           input(placeholder='Имя' name='name').input.input_type_name
           input(placeholder='Телефон' name='phone').input.input_type_phone
-          input(placeholder='E-mail' name='email').input.input_type_email
+          //- input(placeholder='E-mail' name='email').input.input_type_email
           input(type='hidden', name='url', value="<?echo $url?>")
           input(type='hidden', name='utm', value="<?echo $utm?>")
           input(type='hidden', name='utm_term', value="<?echo $utm_term?>")
@@ -111,7 +116,7 @@ body.page
           input(type='hidden', name='utm_source', value="<?echo $utm_source?>")
           input(type='hidden', name='utm_medium', value="<?echo $utm_medium?>")
           input(type='hidden', name='utm_content', value="<?echo $utm_content?>")
-          input(type='hidden', name='order', value='Аварийка. Замена труб')
+          input(type='hidden', name='order', value='Аварийка')
           input(type='submit' value='Отправить').form__btn
       +e.box
         +e.title Работать с нами<br>очень просто
@@ -121,27 +126,36 @@ body.page
             |Заполните форму или позвоните
           +e.item 
             +e.n 2 
-            |Инженер выезжает на объект в течение 2 часов
+            |Специалист выезжает к вам в течение 30 минут
           +e.item 
             +e.n 3
-            |Заключаем договор
+            |Выявляем причину аварии, предлагаем решение, принимаем экстренные меры
           +e.item 
             +e.n 4 
-            |Бригада выезжает в течение 12 часов
+            |На месте согласовываем состав работ, стоимость, заключаем договор
           +e.item 
             +e.n 5 
-            |Выполняем работы по устранению аварии
+            |В течение 3 часов приезжает бригада, установка, материалы, и проводим работы
           +e.item 
             +e.n 6 
-            |Сдаем готовую работу!
-        +e.text Всего 6 шага, и вы пользуетесь новыми трубами!
+            |Сдаем вам инженерные системы в рабочем состоянии
+        +e.text Всего 6 шагов, и вы пользуетесь новыми трубами!
+
+      .price
+        b Выезд на объект для выявления причины аварии
+        br
+        |с 08.00 до 18.00 - бесплатно
+        br
+        |с 18.00 до 07.00  - от 500 до 2000 рублей
+        br
+        b При устранении аварии нами <br>- выезд бесплатный в любое время!
 
 
   .modal#modal__order
     .modal__wrapper
         .modal__dialog
             .close.modal__close
-            .modal__title Заполните форму и представитель компании свяжется с вами
+            .modal__title Заполните форму и специалист выедет к вам в течение 30 минут!
             +b.form
               form.ajax
                 input(placeholder='Имя' name='name').input.input_type_name
@@ -154,7 +168,7 @@ body.page
                 input(type='hidden', name='utm_source', value="<?echo $utm_source?>")
                 input(type='hidden', name='utm_medium', value="<?echo $utm_medium?>")
                 input(type='hidden', name='utm_content', value="<?echo $utm_content?>")
-                input(type='hidden', name='order', value='Аварийка. Замена труб')
+                input(type='hidden', name='order', value='Аварийка')
                 input(type='submit' value='Отправить').form__btn
 
   .modal#modal__ok
@@ -162,7 +176,6 @@ body.page
         .modal__dialog
             .close.modal__close
             .modal__title <b>Ваша заявка принята</b> <br>Наш специалист свяжется с вами в ближайшее время
-
 
   script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript")
   //build:js js/all.js

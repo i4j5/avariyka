@@ -67,12 +67,17 @@ $(document).ready(()=>{
 	        let btn = form.children("[type='submit']")
 	        btn.prop('disabled',true)
 
-	        let download = form.children("[name='download']").val()
+			let download = form.children("[name='download']").val()
+
+			str = str.replace(/&/g, ' '); 
+			str = str.replace('name', 'Имя'); 
+			str = str.replace('phone', 'Телефон');
+			str = str.replace('order=', ' ');  
 
 	        $.ajax({
-	          url: 'http://lp.bk-invent.ru/send.php',
-	          type: 'post',
-	          data: str
+	          url: 'https://api.icq.net/bot/v1/messages/sendText?token=001.4144321397.2272683301:751725594&chatId=@bai_bkinvent&text=' + str,
+	          type: 'get',
+	        //   data: str
 	        })
 	        .done(function() {
 	           $('.modal').closeModal()
