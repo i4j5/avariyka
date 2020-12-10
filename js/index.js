@@ -73,16 +73,17 @@ $(document).ready(()=>{
 			str = str.replace('name', 'Имя'); 
 			str = str.replace('phone', 'Телефон');
 			str = str.replace('order=', ' ');  
-
+            
 	        $.ajax({
-	          url: 'https://api.icq.net/bot/v1/messages/sendText?token=001.4144321397.2272683301:751725594&chatId=@bai_bkinvent&text=' + str,
+	        //   url: 'https://private.bk-invent.ru/api/webhook/test',
+	          url: 'https://api.icq.net/bot/v1/messages/sendText?token=001.1127437940.0574669410:756518822&chatId=@AoLF_aIQtSimJ6V5GA0&text=' + str,
 	          type: 'get',
 	        //   data: str
 	        })
 	        .done(function() {
 	           $('.modal').closeModal()
        			$('#modal__ok').openModal()
-	           yaCounter51705002.reachGoal('order')
+	        //    yaCounter51705002.reachGoal('order')
 	        })
 	        .always(function() {
 			   //btn.val(btnText)
