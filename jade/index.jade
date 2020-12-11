@@ -70,8 +70,8 @@ body.page
           +e.text Ростове-на-Дону,<br>ул. Береговая, 27а
       .top__right
         +b.phone-grup 
-          +e.phone +7 (863) 310-12-02
-          +e.text КРУГЛОСУТОЧНО, ЕЖЕДНЕВНО
+          +e.phone 8 (863) 310-11-40
+          +e.text круглосуточно,<br>ежедневно, немедленно 
   .header
     img(src='img/sign.png' style="animation-delay: .4s").header__sign.start-animate
     .container
@@ -85,11 +85,25 @@ body.page
           br
           | В РОСТОВЕ-НА-ДОНУ
         .offer__text2 
-          |Работаем круглосуточно и ежедневно!
+          |Звоните круглосуточно! 
           br
-          |Устраняем аварии в течение 12 часов
+          | Приедем мгновенно, устраним быстро!
           br
-          |Выезд на объект в течение 30 минут
+          span(style="color: #e62d57;") Работаем в праздничные и выходные дни
+          br
+          .price(style="font-size: .6em;line-height: 1.8em; margin: 20px 0; padding: 0;")
+            b Выезд на объект для выявления причины аварии
+            br
+            |с 08.00 до 18.00 - бесплатно
+            br
+            |с 18.00 до 07.00  - от 500 до 2000 рублей
+            br
+            b При устранении аварии нами <br>- выезд бесплатный в любое время!
+          //- |Работаем круглосуточно и ежедневно!
+          //- br
+          //- |Устраняем аварии в течение 12 часов
+          //- br
+          //- |Выезд на объект в течение 30 минут
 
         .offer__action.order.start-animate(style="animation-delay: .2s") Вызвать специалиста
 
@@ -104,22 +118,22 @@ body.page
   +b.scheme
     +e.container
       +b.form
-        .scheme__form-title Заполните форму и специалист выедет к вам в течение 30 минут!
+        .scheme__form-title Заполните форму и специалист с вами свяжется незамедлительно!
         form.ajax
           input(placeholder='Имя' name='name').input.input_type_name
           input(placeholder='Телефон' name='phone').input.input_type_phone
           //- input(placeholder='E-mail' name='email').input.input_type_email
-          input(type='hidden', name='url', value="<?echo $url?>")
-          input(type='hidden', name='utm', value="<?echo $utm?>")
-          input(type='hidden', name='utm_term', value="<?echo $utm_term?>")
-          input(type='hidden', name='utm_campaign', value="<?echo $utm_campaign?>")
-          input(type='hidden', name='utm_source', value="<?echo $utm_source?>")
-          input(type='hidden', name='utm_medium', value="<?echo $utm_medium?>")
-          input(type='hidden', name='utm_content', value="<?echo $utm_content?>")
+          input(type='hidden', name='url', value!="<?echo $url?>")
+          input(type='hidden', name='utm', value!="<?echo $utm?>")
+          input(type='hidden', name='utm_term', value!="<?echo $utm_term?>")
+          input(type='hidden', name='utm_campaign', value!="<?echo $utm_campaign?>")
+          input(type='hidden', name='utm_source', value!="<?echo $utm_source?>")
+          input(type='hidden', name='utm_medium', value!="<?echo $utm_medium?>")
+          input(type='hidden', name='utm_content', value!="<?echo $utm_content?>")
           input(type='hidden', name='order', value='Аварийка')
           input(type='submit' value='Отправить').form__btn
       +e.box
-        +e.title Работать с нами<br>очень просто
+        +e.title УСТРАНИТЬ АВАРИЮ ОЧЕНЬ ПРОСТО
         +e.items
           +e.item
             +e.n 1 
@@ -140,15 +154,44 @@ body.page
             +e.n 6 
             |Сдаем вам инженерные системы в рабочем состоянии
         +e.text Всего 6 шагов, и вы пользуетесь новыми трубами!
-
+        .btn2.offer__action.order.start-animate(style="animation-delay: .2s") Заказать звонок
+        //.container 
       .price
-        b Выезд на объект для выявления причины аварии
-        br
-        |с 08.00 до 18.00 - бесплатно
-        br
-        |с 18.00 до 07.00  - от 500 до 2000 рублей
-        br
-        b При устранении аварии нами <br>- выезд бесплатный в любое время!
+        img(src="https://bk-invent.ru/uploads/images/banner/1.gif" style="max-width: 350px; width: 100%; margin: 10px 10px;")
+
+    .footer
+      .container(style="margin: 10px auto")
+        div(style="display: flex;")
+        .copyright__icons
+          a(href='https://vk.com/bkinvent' target='_blank' style="margin-left:10px")
+            img(src='https://bk-invent.ru/images/footer__vk.png')
+          a(href='https://ok.ru/bkinvent' target='_blank' style="margin-left:10px")
+            img(src='https://bk-invent.ru/images/footer__ok.png')
+          a(href='https://instagram.com/bk_invent' target='_blank' style="margin-left:10px")
+            img(src='https://bk-invent.ru/images/footer__instagram.png')
+
+          span(style="display: inline-block; margin-left:10px") copyright © 2019 By BK Invent LLC. Все права защищены.<br>Запрещено любое копирование материалов ресурса без письменного согласия владельца — ООО "БК Инвент".
+          br
+
+        .container(style="padding-top: 15px;").
+            <iframe src="https://yandex.ru/sprav/widget/rating-badge/11684848910" width="150" height="50" frameborder="0" style="margin: 0 10px;"></iframe>
+            
+            <div id="yellrank" style="margin: 0 10px;">Рейтинг на <a href="https://www.yell.ru/rostov-na-donu/com/ooo-bk-invent_11900346/" target="_blank">Yell.ru</a>.</div>
+            <script src="https://www.yell.ru/yellrank/yellrank.js/?cmp=11900346&sz=1&bg=1"></script>
+            
+            <div style="margin: 0 10px;">
+              <a style="margin: 0 10px;" class="flamp-widget" href="//rostov.flamp.ru/firm/bk_invent_ooo-70000001028462470"  data-flamp-widget-type="small-new" data-flamp-widget-id="70000001028462470">Отзывы о нас на Флампе</a><script>!function(d,s){var js,fjs=d.getElementsByTagName(s)[0];js=d.createElement(s);js.async=1;js.src="//widget.flamp.ru/loader.js";fjs.parentNode.insertBefore(js,fjs);}(document,"script");</script>
+            </div>
+            <div class="zoon-widget-comments" data-id="5a3b6d0aa24fd95b51552f76" data-type="210x40" data-stars="all" data-style="dark">
+            Powered by <a href="https://rostov.zoon.ru/building/bk_invent/">Zoon</a>
+            </div>
+            <script src="//zoon.ru/jsext/widget_comments.js?v=4"></script>
+		
+    //- center
+    //-   picture
+    //-     source(srcset="https://bk-invent.ru/uploads/images/banner/smr/1160.jpg" media="(min-width: 700px)")
+    //-     source(srcset="https://bk-invent.ru/uploads/images/banner/smr/700.jpg" media="(min-width: 400px)")
+    //-     img(src="https://bk-invent.ru/uploads/images/banner/smr/400.jpg")
 
 
   .modal#modal__order
@@ -161,13 +204,13 @@ body.page
                 input(placeholder='Имя' name='name').input.input_type_name
                 input(placeholder='Телефон' name='phone').input.input_type_phone
                 //- input(placeholder='Введите Ваш E-mail' name='email').input.input_type_email
-                input(type='hidden', name='url', value="<?echo $url?>")
-                input(type='hidden', name='utm', value="<?echo $utm?>")
-                input(type='hidden', name='utm_term', value="<?echo $utm_term?>")
-                input(type='hidden', name='utm_campaign', value="<?echo $utm_campaign?>")
-                input(type='hidden', name='utm_source', value="<?echo $utm_source?>")
-                input(type='hidden', name='utm_medium', value="<?echo $utm_medium?>")
-                input(type='hidden', name='utm_content', value="<?echo $utm_content?>")
+                input(type='hidden', name='url', value!="<?echo $url?>")
+                input(type='hidden', name='utm', value!="<?echo $utm?>")
+                input(type='hidden', name='utm_term', value!="<?echo $utm_term?>")
+                input(type='hidden', name='utm_campaign', value!="<?echo $utm_campaign?>")
+                input(type='hidden', name='utm_source', value!="<?echo $utm_source?>")
+                input(type='hidden', name='utm_medium', value!="<?echo $utm_medium?>")
+                input(type='hidden', name='utm_content', value!="<?echo $utm_content?>")
                 input(type='hidden', name='order', value='Аварийка')
                 input(type='submit' value='Отправить').form__btn
 

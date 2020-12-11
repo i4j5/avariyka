@@ -37,8 +37,8 @@
         background url('../img/logo.svg')
         background-repeat no-repeat
         background-size 80px
-        width 120px
-        height 120px
+        width 150px
+        height 150px
         background-position center
         background-size 90px
         background-color #fff
@@ -46,7 +46,7 @@
         position absolute
         top 50%
         left 50%
-        margin-top -60px
+        margin-top -70px
         margin-left -60px
         animation sk-scaleout 2.0s infinite ease-in-out
         
@@ -493,9 +493,9 @@
     overflow hidden
     
 .scheme
-    padding 30px 0
+    padding 30px 0 0 0 
     width 100%
-    height 100vh
+    //height 100vh
     min-height 650px
     display flex
     justify-content center    
@@ -586,3 +586,19 @@
     @media (min-width 900px)
         float left
         padding 0 15px
+
+picture
+    source,
+    img
+        max-width 100%
+
+.btn2
+    margin 15px 0
+    @media (min-width 1004px)
+        display none 
+
+.footer
+    background #545358
+    padding 20px
+    color #fff 
+    font-size 0.9em
