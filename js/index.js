@@ -72,10 +72,23 @@ $(document).ready(()=>{
 			str = str.replace(/&/g, ' '); 
 			str = str.replace('name', 'Имя'); 
 			str = str.replace('phone', 'Телефон');
-			str = str.replace('order=', ' ');  
+			str = str.replace('order=', ' '); 
+			
+
+			let formData = new FormData(form.get(0))
+			formData.append('url', document.location.host + document.location.pathname)
+
+			$.ajax({
+				url: 'https://private.bk-invent.ru/api/site/create-lead-from-form',
+				type: 'post',
+				data: formData,
+				contentType: false, 
+				processData: false,
+			})
+			
             
 	        $.ajax({
-	        //   url: 'https://private.bk-invent.ru/api/webhook/test',
+	          //url: 'https://private.bk-invent.ru/api/webhook/test',
 	          url: 'https://api.icq.net/bot/v1/messages/sendText?token=001.1127437940.0574669410:756518822&chatId=@AoLF_aIQtSimJ6V5GA0&text=' + str,
 	          type: 'get',
 	        //   data: str
@@ -83,7 +96,16 @@ $(document).ready(()=>{
 	        .done(function() {
 	           $('.modal').closeModal()
        			$('#modal__ok').openModal()
-	        //    yaCounter51705002.reachGoal('order')
+				
+				// let formData = new FormData($form.get(0))
+				// formData.append('url', document.location.host + document.location.pathname)
+				// $.ajax({
+				// 	url: 'https://private.bk-invent.ru/api/site/create-lead-from-form',
+				// 	type: 'post',
+				// 	data: formData,
+				// 	contentType: false, 
+				// 	processData: false,
+				// })
 	        })
 	        .always(function() {
 			   //btn.val(btnText)
